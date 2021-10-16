@@ -13,6 +13,7 @@ class RouterAssertionsTest extends TestCase {
 		$request_uri = [
 			'aClass/aMethod/argOne/argTwo',
 			'aClass/aMethod/argOne/argTwo/',
+			'aClass/aMethod/argOne/argTwo/?foo=123',
 			'aClass/aMethod/argOne/argTwo?foo=123',
 		];
 
@@ -30,6 +31,7 @@ class RouterAssertionsTest extends TestCase {
 		$request_uri = [
 			'aClass/aMethod/argOne/argTwo',
 			'aClass/aMethod/argOne/argTwo/',
+			'aClass/aMethod/argOne/argTwo/?foo=123',
 			'aClass/aMethod/argOne/argTwo?foo=123',
 		];
 
@@ -47,6 +49,7 @@ class RouterAssertionsTest extends TestCase {
 		$request_uri = [
 			'aClass/aMethod/argOne/argTwo',
 			'aClass/aMethod/argOne/argTwo/',
+			'aClass/aMethod/argOne/argTwo/?foo=123',
 			'aClass/aMethod/argOne/argTwo?foo=123',
 		];
 		foreach ($request_uri as $uri) {
@@ -64,6 +67,7 @@ class RouterAssertionsTest extends TestCase {
 			'aClass/aMethod',
 			'aClass/aMethod/',
 			'aClass/aMethod?foo=123',
+			'aClass/aMethod/?foo=123',
 		];
 
 		foreach ($request_uri as $uri) {
@@ -83,6 +87,7 @@ class RouterAssertionsTest extends TestCase {
 		$request_uri = [
 			'aClass',
 			'aClass/',
+			'aClass/?foo=123',
 			'aClass?foo=123',
 		];
 
