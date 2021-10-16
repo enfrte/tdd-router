@@ -36,9 +36,26 @@ class RouterAssertionsTest extends TestCase {
 		];
 
 		foreach ($request_uri as $uri) {
-			$router = new Router($request_uri[0]);
+			$router = new Router($uri);
 			$method = $router->getMethod();
 			$this->assertSame($method, 'aMethod');
+		}
+	}
+
+	// Get empty method replaced by 'index'
+	public function testGetIndexMethod()
+	{
+		$request_uri = [
+			'aClass/',
+			'aClass/index',
+			'aClass/?foo=123',
+			'aClass/index?foo=123',
+		];
+
+		foreach ($request_uri as $uri) {
+			$router = new Router($uri);
+			$method = $router->getMethod();
+			$this->assertSame($method, 'index');
 		}
 	}
 
